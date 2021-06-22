@@ -27,26 +27,9 @@ Http Status
 
 curl --location --request POST 'http://localhost:8090/book/request' \--header 'Content-Type: application/json' \--data-raw '{"roomNumber" : 2,"checkIn" : "2021-13-02T15:10:00Z","checkOut" : "2021-13-02T15:30:00Z","priority" : 1}'
 
+curl --location --request POST 'http://localhost:8090/book/request' \--header 'Content-Type: application/json' \--data-raw '{"roomNumber" : 2,"checkIn" : "2021-13-02T16:10:00Z","checkOut" : "2021-13-02T16:30:00Z","priority" : 2}'
 
-
-curl --location --request POST 'http://localhost:8090/book/request' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "roomNumber" : 2,
-    "checkIn" : "2021-13-02T16:10:00Z",
-    "checkOut" : "2021-13-02T16:30:00Z",
-    "priority" : 2
-}'
-
-curl --location --request POST 'http://localhost:8090/book/request' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "roomNumber" : 1,
-    "checkIn" : "2021-13-02T15:10:00Z",
-    "checkOut" : "2021-13-02T15:30:00Z",
-    "priority" : 1
-}'
-
+curl --location --request POST 'http://localhost:8090/book/request' \--header 'Content-Type: application/json' \--data-raw '{"roomNumber" : 1,"checkIn" : "2021-13-02T16:10:00Z","checkOut" : "2021-13-02T16:30:00Z","priority" : 1}'
 
 ### Method type : POST (to create conflict for room number : 1 with priority 3)
 ### Method name : recieveBookRequest
@@ -55,15 +38,8 @@ Map of room number and array of room booking status with checkin and checkout ti
 List of conflicts room (if any)
 Http Status
 
-curl --location --request POST 'http://localhost:8090/book/request' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "roomNumber" : 1,
-    "checkIn" : "2021-13-02T16:10:00Z",
-    "checkOut" : "2021-13-02T16:30:00Z",
-    "priority" : 3
-}'
 
+curl --location --request POST 'http://localhost:8090/book/request' \--header 'Content-Type: application/json' \--data-raw '{"roomNumber" : 1,"checkIn" : "2021-13-02T16:10:00Z","checkOut" : "2021-13-02T16:30:00Z","priority" : 3}'
 
 ### Method type : GET 
 ### Method name : getAllBooking

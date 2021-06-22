@@ -90,7 +90,7 @@ curl --location --request GET 'http://localhost:8090/allbooking'
 
 ## Use postman to make GET and POST request.
 
-### Add transaction using postman:
+### Send Booking request using postman:
 #### Method type : POST
 #### http://localhost:8090/book/request (localHost/book/request)
 #### Parameter : In body : {
@@ -102,7 +102,7 @@ curl --location --request GET 'http://localhost:8090/allbooking'
 #### Return type : HttpStatus : Return : HttpStatus: Ok : success,  BADREQUEST : if datatype/parameter are invalid or missing
 
 
-### Check balance using Browser
+### Check booking status of all room using Browser
 #### Method type : GET
 #### http://localhost:8090/allbooking
 #### Return type : 

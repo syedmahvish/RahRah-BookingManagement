@@ -1,12 +1,12 @@
 # FetchRewardBackendExercise
 ## Description:
-### A web service that accepts HTTP requests and returns responses consist of list of booked rooms and conflict rooms based which are based on the priority.
+### A web service that accepts HTTP requests for room booking and returns responses consist of list of booked rooms and conflict rooms based which are based on the priority.
 ### If same room have overlap request then request are denied on basis of priority ( default is 0).
 ### 0 as lowest and increasing order highest priority.
 ### Required parameters : 
  "roomNumber" : Int (required),
- "checkIn" : Date (required,
- "checkOut" : Date (required,
+ "checkIn" : Date (required),
+ "checkOut" : Date (required),
 "priority" : Int (Optional default is 0 - lowest)
 
 
@@ -19,6 +19,11 @@ java -jar BookingRequestManagement.jar --server.port=8090
 
 ### Method type : POST
 ### Method name : recieveBookRequest
+### Method Response : 
+Map of room number and array of room booking status with checkin and checkout time, and priority
+List of conflicts room (if any)
+Http Status
+
 
 curl --location --request POST 'http://localhost:8090/book/request' \
 --header 'Content-Type: application/json' \
@@ -50,20 +55,12 @@ curl --location --request POST 'http://localhost:8090/book/request' \
 }'
 
 
-
-curl --location --request POST 'http://localhost:8090/book/request' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "roomNumber" : 1,
-    "checkIn" : "2021-13-02T16:10:00Z",
-    "checkOut" : "2021-13-02T16:30:00Z",
-    "priority" : 1
-}'
-
-
-
 ### Method type : POST (to create conflict for room number : 1 with priority 3)
 ### Method name : recieveBookRequest
+### Method Response : 
+Map of room number and array of room booking status with checkin and checkout time, and priority
+List of conflicts room (if any)
+Http Status
 
 curl --location --request POST 'http://localhost:8090/book/request' \
 --header 'Content-Type: application/json' \
@@ -77,6 +74,10 @@ curl --location --request POST 'http://localhost:8090/book/request' \
 
 ### Method type : GET 
 ### Method name : getAllBooking
+### Method Response : 
+Map of room number and array of room booking status with checkin and checkout time, and priority
+Empty List of conflicts room
+Http Status
 
 curl --location --request GET 'http://localhost:8090/allbooking'
 

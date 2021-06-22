@@ -1,7 +1,7 @@
 # RahRah-BookingManagement
 ## Description:
-### A web service that accepts HTTP requests for room booking and returns responses consist of list of booked rooms and conflict rooms based which are based on the priority.
-### If same room have overlap request then request are denied on basis of priority ( default is 0).
+### A web service that accepts HTTP requests for room booking and returns response which consist of a list of booked rooms and conflicting rooms based which are based on the priority.
+### If same room have overlap request then request are accepted/denied on basis of priority (default is 0).
 ### 0 as lowest and increasing order highest priority.
 ### Required parameters : 
  "roomNumber" : Int (required),

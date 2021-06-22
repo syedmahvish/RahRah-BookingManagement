@@ -1,4 +1,4 @@
-# FetchRewardBackendExercise
+# RahRah-BookingManagement
 ## Description:
 ### A web service that accepts HTTP requests for room booking and returns responses consist of list of booked rooms and conflict rooms based which are based on the priority.
 ### If same room have overlap request then request are denied on basis of priority ( default is 0).

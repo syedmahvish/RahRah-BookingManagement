@@ -25,14 +25,7 @@ List of conflicts room (if any)
 Http Status
 
 
-curl --location --request POST 'http://localhost:8090/book/request' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "roomNumber" : 2,
-    "checkIn" : "2021-13-02T15:10:00Z",
-    "checkOut" : "2021-13-02T15:30:00Z",
-    "priority" : 1
-}'
+curl --location --request POST 'http://localhost:8090/book/request' \--header 'Content-Type: application/json' \--data-raw '{"roomNumber" : 2,"checkIn" : "2021-13-02T15:10:00Z","checkOut" : "2021-13-02T15:30:00Z","priority" : 1}'
 
 
 
